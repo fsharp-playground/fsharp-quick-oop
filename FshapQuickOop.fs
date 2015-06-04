@@ -337,3 +337,16 @@ module ExplicitStuctDefinition =
     v.x <- 10
     v.y <- 10
 
+
+// auto property
+module AutoProperty =
+    type Vector(x, y) =
+        member val X = x with set,get
+        member val Y = y with set,get
+        member this.Print() = printfn "%d %d" this.X this.Y
+
+
+    let v = Vector(10,20)
+    let x = v.X = 100
+    let y = v.Y = 200
+
