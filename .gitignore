@@ -1,3 +1,5 @@
 bin
 obj
 *.exe
+.DS_Store
+*.userprefs

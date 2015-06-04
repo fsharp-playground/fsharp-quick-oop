@@ -1,4 +1,5 @@
 // test oop concept
+
 // http://blogs.msdn.com/b/timng/archive/2010/04/05/f-object-oriented-programming-quick-guide.aspx
 
 module Default = 
@@ -140,5 +141,12 @@ module MutableProperty =
     v.X <- 0.
     v.Y <- 0.
     let len2 = v.Length
+
+
+// generic class and functional aguments
+module GenericClass = 
+    type Factory<'T>(f: unit -> 'T) = 
+        member this.Create() =
+            f()
 
 
