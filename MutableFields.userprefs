@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="MutableFields.exe">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MutableFields2.sketchcs">
+    <Files>
+      <File FileName="MutableFields.fs" Line="23" Column="44" />
+      <File FileName="FshapQuickOop.fs" Line="14" Column="18" />
+      <File FileName="MutableFields.cs" Line="38" Column="1" />
+      <File FileName="MutableFields2.sketchcs" Line="4" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

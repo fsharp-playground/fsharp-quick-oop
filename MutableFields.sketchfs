@@ -1,0 +1,27 @@
+```xml
+<Manifest>
+  <AgentType>Mac_Cocoa</AgentType>
+  <TimeoutSeconds>0</TimeoutSeconds>
+</Manifest>
+```
+```fsharp
+
+type MutableVector(x : float, y : float) =
+    let mutable cx = x
+    let mutable cy = y
+    member this.X with get() = cx and
+                       set(v) = cx <- v
+    member this.Y with get() = cy and
+                       set(v) = cy <- v
+    member this.Length = sqrt(x * x + y * y)
+ 
+// Usage:
+let v = MutableVector(2., 2.)
+let len1 = v.Length
+v.X <- 3.
+v.Y <- 3.
+let len2 = v.Length
+
+
+
+```

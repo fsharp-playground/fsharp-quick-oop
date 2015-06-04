@@ -1,0 +1,23 @@
+
+class MutableVector
+{
+	public MutableVector(double x, double y)
+	{
+		this.X = x;
+		this.Y = y;
+	}
+	public double X { get; set; }
+	public double Y { get; set; }
+	public double Length
+	{
+		get { return Math.Sqrt(
+			this.X * this.X +
+			this.Y * this.Y); }
+	}
+};
+
+var v = new MutableVector(2.0, 2.0);
+var len1 = v.Length;
+v.X = 3.0;
+v.Y = 3.0;
+var len2 = v.Length;
