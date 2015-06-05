@@ -347,6 +347,7 @@ module AutoProperty =
 
 
     let v = Vector(10,20)
+    v.X <- 100
     let x = v.X = 100
     let y = v.Y = 200
 
