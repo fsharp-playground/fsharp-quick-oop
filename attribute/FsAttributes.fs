@@ -15,5 +15,9 @@ module IOExts =
         member this.ReadLine x = ()
 
 
+[<AutoOpen>]
+module GlobalValues =
+    let asyncSeq = "Hello, world"
+
 
 
