@@ -86,7 +86,7 @@ double x = v.X;
 double y = v.Y;
 ```
 
-#### Multiple constructors
+### Multiple constructors
 
 - `F#`
 
@@ -120,7 +120,7 @@ Vector v = new Vector(10, 10);
 Vector w = new Vector(v, 0.5);
 ```
 
-#### Member functions
+### Member functions
 
 - `F#`
 
@@ -157,7 +157,7 @@ Vector v = new Vector(10, 10);
 Vector v2 = v.Scale(0.5);
 ```
 
-#### Operators
+### Operators
 
 - `F#`
 
@@ -204,7 +204,7 @@ Vector y = new Vector(3, 3);
 double dp = x * y;
 ```
 
-#### Static members and properties
+### Static members and properties
 
 - `F#`
 
@@ -257,7 +257,7 @@ Vector y = Vector.NormX;
 double dp = Vector.Dot(x, y);
 ```
 
-#### Class properties that use let value computations in the constructor
+### Class properties that use let value computations in the constructor
 
 - `F#`
 
@@ -283,7 +283,7 @@ let rad = v.Rad
 
 - `C#`
 
-```chsarp
+```csharp
 public class Vector
 {
     double mag = 0.0;
@@ -314,7 +314,7 @@ double mag = v.Mag;
 double rad = v.Rad;
 ```
 
-#### Class members that use private function values
+### Class members that use private function values
 
 - `F#`
 
@@ -373,7 +373,7 @@ Vector x = v.RotateByDegrees(90.0);
 Vector y = v.RotateByRadians(Math.PI / 6.0);
 ```
 
-#### Overloading members
+### Overloading members
 
 - `F#`
 
@@ -412,7 +412,7 @@ c.Drive();
 c.Drive(10);
 ```
 
-#### Mutable fields in a class with get/set properties
+### Mutable fields in a class with get/set properties
 
 - `F#`
 
@@ -501,7 +501,7 @@ Factory<int> ints = new Factory<int>(() => 10);
 int res2 = ints.Create();
 ```
 
-#### Generic classes and methods
+### Generic classes and methods
 
 - `F#`
 
@@ -534,7 +534,7 @@ Container<int> c = new Container<int>(10);
 string result = c.Convert(n => n.ToString())
 ````
 
-#### Extension methods
+### Extension methods
 
 - `F#`
 
@@ -564,7 +564,7 @@ IEnumerable<string> res =
     l.MyExtensionMethod();
 ```
 
-#### Extension properties
+### Extension properties
 
 - `F#`
 
@@ -584,7 +584,7 @@ let d = c.MyExtensionProp
 N/A. C# does not support this feature.
 ```
 
-#### Indexers
+### Indexers
 
 - `F#`
 
@@ -614,7 +614,7 @@ int x = tab[“10”];
 int y = tab[“12”];
 ```
 
-#### Indexed Properties
+### Indexed Properties
 
 - `F#`
 
@@ -638,7 +638,7 @@ let a = tab.MultipleValues(10, 5)
 N/A. C# does not support this feature.
 ```
 
-#### Abstract classes
+### Abstract classes
 
 - `F#`
 
@@ -659,7 +659,7 @@ public abstract class Shape {
 ```
 
 
-#### Derive from a base class and overriding base methods with generics
+### Derive from a base class and overriding base methods with generics
 
 - `F#`
 
@@ -720,7 +720,7 @@ Vector v = new Vector(45, 10);
 Vector v2 = v.Scale(0.5);
 ```
 
-#### Calling a base class method
+### Calling a base class method
 
 - `F#`
 
@@ -763,7 +763,7 @@ Dog brian = new Dog();
 brian.Run();
 ```
 
-#### Implementing an interface
+### Implementing an interface
 
 - `F#`
 
@@ -830,7 +830,7 @@ IVector w = v.Scale(0.5);
 double mag = w.Mag;
 ```
 
-#### Implementing an interface with object expressions
+### Implementing an interface with object expressions
 
 - `F#`
 
@@ -856,7 +856,7 @@ let d = CreateCustomer “Garfield” 5
 N/A. C# does not support creating object expressions.
 ```
 
-#### Events
+### Events
 
 - `F#`
 
@@ -914,7 +914,7 @@ snoopy.Bark(“Hello”);
 ```
 
 
-#### Explicit class constructor
+### Explicit class constructor
 
 - `F#`
 
@@ -930,13 +930,13 @@ v.x <- 10.
 v.y <- 10.
 ```
 
-- `F#`
+- `C#`
 
 ```csharp
 ...
 ```
 
-#### Explicit public fields
+### Explicit public fields
 
 - `F#`
 
