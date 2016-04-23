@@ -1,4 +1,4 @@
-## FSharp Quick OOP
+## `F#` Quick OOP
 
 - Original post by Timothy Ng @ https://blogs.msdn.microsoft.com/timng/2010/04/06/f-quick-guides-object-oriented-programming
 
