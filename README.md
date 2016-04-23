@@ -4,6 +4,8 @@
 
 ### Classes with properites and default constructor
 
+- `F#`
+
 ```fsharp
 type Vector(x : float, y : float) =
     member this.X = x
@@ -14,6 +16,8 @@ let v = Vector(10., 10.)
 let x = v.X
 let y = v.Y
 ```
+
+- `C#`
 
 ```csharp
 public class Vector {
@@ -41,6 +45,8 @@ double y = v.Y;
 
 ### Stuctcs with properites
 
+- `F#`
+
 ```fsharp
 [<Struct>]
 type Vector(x : float, y : float) =
@@ -52,6 +58,8 @@ let v = Vector(10., 10.)
 let x = v.X
 let y = v.Y
 ```
+
+- `C#`
 
 ```csharp
 public struct Vector {
@@ -80,6 +88,8 @@ double y = v.Y;
 
 #### Multiple constructors
 
+- `F#`
+
 ```fsharp
 type Vector(x : float, y : float) =
     member this.X = x
@@ -90,6 +100,8 @@ type Vector(x : float, y : float) =
 let v = Vector(10., 10.)
 let w = new Vector(v, 0.5)
 ```
+
+- `C#`
 
 ```csharp
 public class Vector {
@@ -110,6 +122,8 @@ Vector w = new Vector(v, 0.5);
 
 #### Member functions
 
+- `F#`
+
 ```fsharp
 type Vector(x : float, y : float) =
 member this.Scale(s : float) =
@@ -119,6 +133,8 @@ member this.Scale(s : float) =
 let v = Vector(10., 10.)
 let v2 = v.Scale(0.5)
 ```
+
+- `C#`
 
 ```csharp
 public class Vector {
@@ -143,6 +159,8 @@ Vector v2 = v.Scale(0.5);
 
 #### Operators
 
+- `F#`
+
 ```fsharp
 type Vector(x, y) =
     member this.X = x
@@ -155,6 +173,8 @@ let x = Vector(2., 2.)
 let y = Vector(3., 3.)
 let dp = x * y
 ```
+
+- `C#`
 
 ```csharp
 public class Vector {
@@ -186,6 +206,8 @@ double dp = x * y;
 
 #### Static members and properties
 
+- `F#`
+
 ```fsharp
 type Vector(x, y) =
     member this.X = x
@@ -199,6 +221,8 @@ let x = Vector(2., 2.)
 let y = Vector.NormX
 let dp = Vector.Dot(x, y)
 ```
+
+- `C#`
 
 ```csharp
 public class Vector {
@@ -235,6 +259,8 @@ double dp = Vector.Dot(x, y);
 
 #### Class properties that use let value computations in the constructor
 
+- `F#`
+
 ```fsharp
 type Vector(x, y) =
     let mag = sqrt(x * x + y * y)
@@ -254,6 +280,8 @@ let v = Vector(10., 10.)
 let mag = v.Mag
 let rad = v.Rad
 ```
+
+- `C#`
 
 ```chsarp
 public class Vector
@@ -288,6 +316,8 @@ double rad = v.Rad;
 
 #### Class members that use private function values
 
+- `F#`
+
 ```fsharp
 type Vector(x, y) =
     let rotate a =
@@ -306,6 +336,8 @@ let v = Vector(10., 0.)
 let x = v.RotateByDegrees(90.)
 let y = v.RotateByRadians(Math.PI / 6.)
 ```
+
+- `C#`
 
 ```csharp
 public class Vector
@@ -343,6 +375,8 @@ Vector y = v.RotateByRadians(Math.PI / 6.0);
 
 #### Overloading members
 
+- `F#`
+
 ```fsharp
 type Car() =
     member this.Drive() =
@@ -358,6 +392,8 @@ let c = Car()
 c.Drive()
 c.Drive(10)
 ```
+
+- `C#`
 
 ```csharp
 public class Car {
@@ -378,6 +414,8 @@ c.Drive(10);
 
 #### Mutable fields in a class with get/set properties
 
+- `F#`
+
 ```fsharp
 type MutableVector(x : float, y : float) =
     let mutable cx = x
@@ -395,6 +433,8 @@ v.X <- 3.
 v.Y <- 3.
 let len2 = v.Length
 ```
+
+- `C#`
 
 ```csharp
 public class MutableVector {
@@ -421,6 +461,8 @@ double len2 = v.Length;
 
 ### Generic classes and function arguments
 
+- `F#`
+
 ```fsharp
 type Factory<‘T>(f : unit -> ‘T) =
     member this.Create() =
@@ -434,6 +476,8 @@ let res = strings.Create()
 let ints = Factory<int>(fun () -> 10)
 let res = ints.Create()
 ```
+
+- `C#`
 
 ```csharp
 public class Factory<T> {
@@ -459,6 +503,8 @@ int res2 = ints.Create();
 
 #### Generic classes and methods
 
+- `F#`
+
 ````fsharp
 type Container<‘T>(a : ‘T) =
     member this.Convert<‘U>(f : ‘T -> ‘U) =
@@ -468,6 +514,8 @@ type Container<‘T>(a : ‘T) =
 let c = new Container<int>(10)
 let b = c.Convert(fun a -> a.ToString())
 ````
+
+- `C#`
 
 ```csharp
 public class Container<T> {
@@ -488,6 +536,8 @@ string result = c.Convert(n => n.ToString())
 
 #### Extension methods
 
+- `F#`
+
 ```fsharp
 type List<‘T> with
     member this.MyExtensionMethod() =
@@ -497,6 +547,8 @@ type List<‘T> with
 let c = [1; 2; 3]
 let d = c.MyExtensionMethod()
 ```
+
+- `C#`
 
 ```csharp
 public static class ExtensionMethods {
@@ -514,6 +566,8 @@ IEnumerable<string> res =
 
 #### Extension properties
 
+- `F#`
+
 ```fsharp
 ype List<‘T> with
     member this.MyExtensionProp =
@@ -524,11 +578,15 @@ let c = [1; 2; 3]
 let d = c.MyExtensionProp
 ```
 
+- `C#`
+
 ```csharp
 N/A. C# does not support this feature.
 ```
 
 #### Indexers
+
+- `F#`
 
 ```fsharp
 type Table() =
@@ -540,6 +598,8 @@ let tab = Table()
 let x = tab.[“10”]
 let y = tab.[“12”]
 ```
+
+- `C#`
 
 ```csharp
 public class Table {
@@ -556,6 +616,8 @@ int y = tab[“12”];
 
 #### Indexed Properties
 
+- `F#`
+
 ```fsharp
 type Table() =
     member this.Values
@@ -570,11 +632,15 @@ let y = tab.Values(“12”)
 let a = tab.MultipleValues(10, 5)
 ```
 
+- `C#`
+
 ```csharp
 N/A. C# does not support this feature.
 ```
 
 #### Abstract classes
+
+- `F#`
 
 ```fsharp
 [<AbstractClass>]
@@ -582,6 +648,8 @@ type Shape() =
     abstract Name : string with get
     abstract Scale : float -> Shape
 ```
+
+- `C#`
 
 ```csharp
 public abstract class Shape {
@@ -592,6 +660,8 @@ public abstract class Shape {
 
 
 #### Derive from a base class and overriding base methods with generics
+
+- `F#`
 
 ```fsharp
 [<AbstractClass>]
@@ -611,6 +681,8 @@ type Vector(angle, mag) =
 let v = Vector(45., 10.)
 let v2 = v.Scale(0.5)
 ```
+
+- `C#`
 
 ```csharp
 public abstract class Shape<T> {
@@ -650,6 +722,8 @@ Vector v2 = v.Scale(0.5);
 
 #### Calling a base class method
 
+- `F#`
+
 ```fsharp
 type Animal() =
     member this.Rest() =
@@ -666,6 +740,8 @@ type Dog() =
 let brian = new Dog()
 brian.Run()
 ```
+
+- `C#`
 
 ```csharp
 public class Animal {
@@ -689,6 +765,8 @@ brian.Run();
 
 #### Implementing an interface
 
+- `F#`
+
 ```fsharp
 type IVector =
 abstract Mag : double with get
@@ -708,7 +786,9 @@ let w = v.Scale(0.5)
 let mag = w.Mag
 ```
 
-```fsharp
+- `C#`
+
+```csharp
 interface IVector {
     double Mag { get; }
     IVector Scale(double s);
@@ -752,6 +832,8 @@ double mag = w.Mag;
 
 #### Implementing an interface with object expressions
 
+- `F#`
+
 ```fsharp
 type ICustomer =
     abstract Name : string with get
@@ -768,11 +850,15 @@ let c = CreateCustomer “Snoopy” 16
 let d = CreateCustomer “Garfield” 5
 ```
 
+- `C#`
+
 ```csharp
 N/A. C# does not support creating object expressions.
 ```
 
 #### Events
+
+- `F#`
 
 ```fsharp
 type BarkArgs(msg:string) =
@@ -795,6 +881,8 @@ let snoopy = new Dog()
 snoopy.OnBark.Add( fun ba -> printfn “%s” (ba.Message))
 snoopy.Bark(“Hello”)
 ```
+
+- `C#`
 
 ```csharp
 public class BarkArgs : EventArgs {
@@ -828,6 +916,8 @@ snoopy.Bark(“Hello”);
 
 #### Explicit class constructor
 
+- `F#`
+
 ```fsharp
 type Vector =
     val mutable x : float
@@ -840,11 +930,15 @@ v.x <- 10.
 v.y <- 10.
 ```
 
+- `F#`
+
 ```csharp
 ...
 ```
 
 #### Explicit public fields
+
+- `F#`
 
 ```fsharp
 type Vector() =
@@ -858,6 +952,8 @@ let v = Vector()
 v.x <- 10
 v.y <- 10
 ```
+
+- `C#`
 
 ```csharp
 public class Vector {
@@ -873,6 +969,8 @@ v.y = 10;
 
 ### Explicit struct definition
 
+- `F#`
+
 ```fsharp
 [<Struct>]
 type Vector =
@@ -885,7 +983,9 @@ v.x <- 10
 v.y <- 10
 ```
 
-```
+- `C#`
+
+```csharp
 public struct Vector {
     public int x;
     public int y;
